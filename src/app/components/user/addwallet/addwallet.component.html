@@ -1,0 +1,15 @@
+<div class="col-sm-6 offset-sm-3">
+
+    <h3 class="mb-4">Add new wallet</h3>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="walletname" placeholder="name@example.com" name="newWallet.name" [(ngModel)]="newWallet.name">
+        <label for="walletname">Wallet name <em> *</em></label>
+    </div>
+   
+    
+    <div class="d-flex gap-2">
+        <button class="mb-3 btn btn-success" (click)="addwallet()">Add <i class="bi bi-piggy-bank"></i></button>
+        <button class="mb-3 btn btn-secondary" routerLink="/wallets">Back <i class="bi bi-box-arrow-left"></i></button>
+    </div>
+</div>
