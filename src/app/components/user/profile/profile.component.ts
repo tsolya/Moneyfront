@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { APIService } from '../../../services/api.service';
 import { User } from '../../../interfaces/user';
+import { AuthService } from '../../../services/auth.service';
 
 
 @Component({
@@ -13,8 +14,10 @@ import { User } from '../../../interfaces/user';
 })
 export class ProfileComponent {
     constructor(
-      private api: APIService
+      private api: APIService,
+      private auth:AuthService
     ){}
+    loggeduser = this.auth.loggedUser()[0]
     updUser: User = {
       id: 0,
       name: '',
