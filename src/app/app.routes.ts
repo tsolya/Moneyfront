@@ -9,6 +9,9 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { WalletsComponent } from './components/user/wallets/wallets.component';
 import { AddwalletComponent } from './components/user/addwallet/addwallet.component';
 import { TransactionsComponent } from './components/user/transactions/transactions.component';
+import { NewtransactionComponent } from './components/user/newtransaction/newtransaction.component';
+import { CategorieslistComponent } from './components/user/categorieslist/categorieslist.component';
+import { AddcategoryComponent } from './components/user/addcategory/addcategory.component';
 
 export const routes: Routes = [
     //General routeok
@@ -23,6 +26,9 @@ export const routes: Routes = [
     {path: 'wallets', component:WalletsComponent},
     {path: 'addwallet', component:AddwalletComponent},
     {path: 'transactions', component:TransactionsComponent},
+    {path: 'newtransaction/:id', component:NewtransactionComponent},
+    {path: 'categories', component:CategorieslistComponent},
+    {path: 'addcategory', component:AddcategoryComponent},
 
 
 

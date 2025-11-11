@@ -5,6 +5,7 @@ import { APIService } from '../../../services/api.service';
 import { MessageService } from '../../../services/message.service';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { Transaction } from '../../../interfaces/transaction';
 
 @Component({
   selector: 'app-wallets',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './wallets.component.scss'
 })
 export class WalletsComponent implements OnInit{
+  
   wallets: Wallet[] = []
   loggeduser = this.auth.loggedUser()[0]
   constructor(

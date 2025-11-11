@@ -5,7 +5,6 @@ import { Router, RouterModule } from '@angular/router';
 import { APIService } from '../../../services/api.service';
 import { MessageService } from '../../../services/message.service';
 import { AuthService } from '../../../services/auth.service';
-import { User } from '../../../interfaces/user';
 
 @Component({
   selector: 'app-addwallet',
@@ -43,7 +42,7 @@ export class AddwalletComponent {
           this.msg.show('danger','Hiba',res.message)
           return
         }
-      this.msg.show('success','Ok',res.message)
+      this.msg.show('success','OK',"Tárca sikeresen létrehozva")
       this.newWallet = {
         id: 0,
         userId: 0,

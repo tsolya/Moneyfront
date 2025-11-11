@@ -45,6 +45,11 @@ export class NavbarComponent implements OnInit{
       this.navItems=[
         ...(this.isLoggedIn)?[
         {
+          name: 'Kategóriák',
+          icon: 'bi-tags-fill',
+          url:'categories'
+        },
+        {
           name: 'Tárcák',
           icon: 'bi-wallet',
           url:'wallets',

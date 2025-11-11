@@ -10,8 +10,8 @@
   <div class="card-body">
     <h5 class="card-title">{{wallet.name}}</h5>
     <p class="card-text">Balance: {{wallet.balance}}</p>
-    <button class="btn btn-success">Make transaction <i class="bi bi-arrow-down-up"></i></button>
-    <button class="btn btn-danger mx-3" (click)="WalletDelete(wallet.id)">Delete wallet</button>
+    <button class="btn btn-success" [routerLink]="['/newtransaction', wallet.id]">Make transaction <i class="bi bi-arrow-down-up"></i></button>
+    <button class="btn btn-danger mx-3" (click)="WalletDelete(wallet.id)">Delete wallet <i class="bi bi-trash-fill"></i></button>
   </div>
 </div>
 </div>

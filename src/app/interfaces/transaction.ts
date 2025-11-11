@@ -1,9 +1,9 @@
 export interface Transaction{
     id:number
     walletId:number
-    walletName:string
+    walletName?:string
     amount:number
     categoryId:number
-    categoryName: string
+    categoryName?: string
     type:boolean
 }
