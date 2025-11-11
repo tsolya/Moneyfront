@@ -23,13 +23,14 @@ export class TransactionsComponent {
     private msg: MessageService,
     private auth: AuthService
   ){}
-ngOnInit(): void {
-    this.getWallets()
+async ngOnInit(): Promise<void> {
+    await this.getWallets()
     this.getTransactions()
     
   } 
-  getTransactions(){
-    this.api.Transactionget("transactions",this.ids.toString()).then(res =>{
+  async getTransactions(){
+    await this.getIds()
+    this.api.Transactionget("transactions/"+this.ids.toString()).then(res =>{
       this.transactions = res.data
     })
   }
@@ -37,12 +38,12 @@ ngOnInit(): void {
     await this.api.Select("wallets/userId/eq",this.loggeduser.id).then(res =>{
       this.wallets = res.data
     })
-    this.getIds()
+    
   }
   getIds(){
     this.wallets.forEach(wallet => {
       this.ids.push(wallet.id)
     });
-    console.log(this.ids.toString())
+    
   }
 }

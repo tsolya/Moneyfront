@@ -143,9 +143,9 @@ export class APIService {
       }
     }
   }
-  async Transactionget(table: string, ids: string): Promise<apiRES>{
+  async Transactionget(table: string): Promise<apiRES>{
     try{
-      const res = await axios.get(`${this.SERVER}/join/${table}/${ids}`)
+      const res = await axios.get(`${this.SERVER}/join/${table}`)
     return {
       status:200,
       data : res.data

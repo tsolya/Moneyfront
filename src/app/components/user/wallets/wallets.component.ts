@@ -31,7 +31,13 @@ ngOnInit(): void {
   }
   WalletDelete(id: number){
     this.api.Delete("wallets",id).then(res=>{
-      this.getWallets
+      if(res.status == 200){
+        this.msg.show('success','OK',"Tárca törölve")
+        this.getWallets()
+        return
+      }
+      this.msg.show('danger','Hiba',"Hiba történt a törlés során")
+      
     })
   }
 }
