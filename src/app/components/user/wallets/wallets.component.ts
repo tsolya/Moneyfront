@@ -28,5 +28,10 @@ ngOnInit(): void {
     this.api.Select("wallets/userId/eq",this.loggeduser.id).then(res =>{
       this.wallets = res.data
     })
-  } 
+  }
+  WalletDelete(id: number){
+    this.api.Delete("wallets",id).then(res=>{
+      this.getWallets
+    })
+  }
 }

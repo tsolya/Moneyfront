@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { WalletsComponent } from './components/user/wallets/wallets.component';
 import { AddwalletComponent } from './components/user/addwallet/addwallet.component';
+import { TransactionsComponent } from './components/user/transactions/transactions.component';
 
 export const routes: Routes = [
     //General routeok
@@ -21,6 +22,7 @@ export const routes: Routes = [
     //User routeok
     {path: 'wallets', component:WalletsComponent},
     {path: 'addwallet', component:AddwalletComponent},
+    {path: 'transactions', component:TransactionsComponent},
 
 
 

@@ -143,4 +143,19 @@ export class APIService {
       }
     }
   }
+  async Transactionget(table: string, ids: string): Promise<apiRES>{
+    try{
+      const res = await axios.get(`${this.SERVER}/join/${table}/${ids}`)
+    return {
+      status:200,
+      data : res.data
+    }
+    }
+    catch (err : any){
+      return {
+        status:500,
+        message: "Hiba történt az adatok lekéréskor"
+      }
+    }
+  }
 }

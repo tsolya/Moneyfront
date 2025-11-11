@@ -50,6 +50,11 @@ export class NavbarComponent implements OnInit{
           url:'wallets',
         },
         {
+          name: 'Tranzakciók',
+          icon: 'bi-arrow-down-up',
+          url:'transactions',
+        },
+        {
           name: 'Profil',
           icon: 'bi-people-fill',
           url:'profile'
