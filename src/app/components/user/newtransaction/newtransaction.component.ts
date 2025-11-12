@@ -38,18 +38,22 @@ export class NewtransactionComponent implements OnInit{
   }
 
   async getWallet(): Promise<void> {
-    const res: any = await this.api.Select('wallets', this.selectedWallet);
-    if(res && res.status === 200){
-      this.wallet = res.data[0];
-      this.newTransaction.walletId = this.wallet.id;
-    }
+    await this.api.Select('wallets', this.selectedWallet).then(res=>{
+      if(res && res.status === 200){
+        this.wallet = res.data[0];
+        this.newTransaction.walletId = this.wallet.id;
+      }
+    })
+    
   }
 
   async getCategories(): Promise<void> {
-    const res: any = await this.api.SelectAll('categories');
-    if(res && res.status === 200){
-      this.categories = res.data || [];
-    }
+    await this.api.SelectAll('categories').then(res=>{
+      if(res && res.status === 200){
+        this.categories = res.data || [];
+      }
+    })
+    
   }
 
   async MakeTransaction(): Promise<void> {
@@ -71,7 +75,6 @@ export class NewtransactionComponent implements OnInit{
         return;
       }
 
-      // normalize transaction
       this.newTransaction.amount = amount;
       this.newTransaction.type = Boolean(this.newTransaction.type);
 

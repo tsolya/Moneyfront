@@ -43,9 +43,9 @@ export class CategorieslistComponent implements OnInit {
       await this.api.Delete('categories', id).then(res=>{
         if(res && res.status === 200){
         this.msg.show('success', 'OK', 'Kategória sikeresen törölve');
-        this.getCategories(); // újratöltjük a listát
+        this.getCategories();
       } else {
-        this.msg.show('danger', 'Hiba', res?.message || 'Nem sikerült törölni a kategóriát');
+        this.msg.show('danger', 'Hiba', 'Nem sikerült törölni a kategóriát');
       }
       });
       
